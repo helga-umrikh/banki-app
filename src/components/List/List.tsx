@@ -1,42 +1,36 @@
-import React from 'react'
+import React, { FC } from 'react'
 import './List.scss'
-import { Avatar, List as ListComponent } from 'antd'
+import { Avatar, List as ListComponent, Typography } from 'antd'
+import { IBankData } from '../../interfaces/IBankData'
+const { Title } = Typography
+interface ListProps {
+    data: IBankData | null
+}
 
-const List = () => {
+const List: FC<ListProps> = ({ data }) => {
     return (
-        <ListComponent className="banks-list" itemLayout="horizontal" bordered>
-            <ListComponent.Item>
-                <ListComponent.Item.Meta
-                    avatar={<Avatar src={''} shape="square" />}
-                    title={<a href="https://ant.design">{'Т-Банк'}</a>}
-                    description={'сумма'}
-                />
-                <div>1000 Р</div>
-            </ListComponent.Item>
-            <ListComponent.Item>
-                <ListComponent.Item.Meta
-                    avatar={<Avatar src={''} shape="square" />}
-                    title={<a href="https://ant.design">{'ВТБ'}</a>}
-                    description={'сумма'}
-                />
-                <div>10 000 Р</div>
-            </ListComponent.Item>
-            <ListComponent.Item>
-                <ListComponent.Item.Meta
-                    avatar={<Avatar src={''} shape="square" />}
-                    title={<a href="https://ant.design">{'Почта Банк'}</a>}
-                    description={'сумма'}
-                />
-                <div>20 000 Р</div>
-            </ListComponent.Item>
-            <ListComponent.Item>
-                <ListComponent.Item.Meta
-                    avatar={<Avatar src={''} shape="square" />}
-                    title={<a href="https://ant.design">{'Локо-Банк'}</a>}
-                    description={'сумма'}
-                />
-                <div>20 000 Р</div>
-            </ListComponent.Item>
+        <ListComponent
+            className="banks-list"
+            itemLayout="horizontal"
+            bordered
+            loading={!Boolean(data)}
+        >
+            {data?.products ? (
+                data.products.map((item) => (
+                    <ListComponent.Item>
+                        <ListComponent.Item.Meta
+                            avatar={<Avatar src={item.logo} shape="square" />}
+                            title={<Title level={5}>{item.name}</Title>}
+                            description="сумма"
+                        />
+                        <Title level={5}>
+                            {item.amount} {'\u20BD'}
+                        </Title>
+                    </ListComponent.Item>
+                ))
+            ) : (
+                <Title>К сожалению по вашему запросу ничего не найдено</Title>
+            )}
         </ListComponent>
     )
 }
