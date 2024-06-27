@@ -8,6 +8,6 @@ export interface Product {
     logo: string | null
 }
 export interface IBankData {
-    filter: Filter
+    filter: Filter | null
     products: Product[] | null
 }

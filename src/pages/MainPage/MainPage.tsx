@@ -1,23 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './MainPage.scss'
 import List from '../../components/List/List'
-import { getCreditsData } from '../../api/getCreditsData'
-import { IBankData } from '../../interfaces/IBankData'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../redux/store'
 
 const MainPage = () => {
-    const [data, setData] = useState<IBankData | null>(null)
-
-    useEffect(() => {
-        const getData = async () => {
-            const res = await getCreditsData('./mock.json')
-            setData(res)
-        }
-        getData()
-    }, [])
-
+    const creditListData = useSelector(
+        (state: RootState) => state.creditList.products
+    )
     return (
         <div className="main-page">
-            <List data={data} />
+            <List data={creditListData} />
         </div>
     )
 }

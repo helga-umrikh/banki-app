@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
 import './List.scss'
 import { Avatar, List as ListComponent, Typography } from 'antd'
-import { IBankData } from '../../interfaces/IBankData'
+import { Product } from '../../interfaces/IBankData'
 const { Title } = Typography
 interface ListProps {
-    data: IBankData | null
+    data: Product[] | null
 }
 
 const List: FC<ListProps> = ({ data }) => {
@@ -15,8 +15,8 @@ const List: FC<ListProps> = ({ data }) => {
             bordered
             loading={!Boolean(data)}
         >
-            {data?.products ? (
-                data.products.map((item) => (
+            {data ? (
+                data.map((item) => (
                     <ListComponent.Item>
                         <ListComponent.Item.Meta
                             avatar={<Avatar src={item.logo} shape="square" />}
