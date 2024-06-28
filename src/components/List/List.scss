@@ -1,4 +1,8 @@
-.banks-list {
-  max-width: 1000px;
+.credits-list {
+  width: 1000px;
   margin: 2em auto;
+
+  &__title {
+    text-align: center !important;
+  }
 }

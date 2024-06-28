@@ -1,21 +1,21 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import './List.scss'
 import { Avatar, List as ListComponent, Typography } from 'antd'
 import { Product } from '../../interfaces/IBankData'
 const { Title } = Typography
 interface ListProps {
-    data: Product[] | null
+    data: Product[]
 }
 
 const List: FC<ListProps> = ({ data }) => {
     return (
         <ListComponent
-            className="banks-list"
+            className="credits-list"
             itemLayout="horizontal"
             bordered
             loading={!Boolean(data)}
         >
-            {data ? (
+            {data.length > 0 ? (
                 data.map((item) => (
                     <ListComponent.Item>
                         <ListComponent.Item.Meta
@@ -29,7 +29,7 @@ const List: FC<ListProps> = ({ data }) => {
                     </ListComponent.Item>
                 ))
             ) : (
-                <Title>К сожалению по вашему запросу ничего не найдено</Title>
+                <Title level={5}>Нет данных</Title>
             )}
         </ListComponent>
     )
