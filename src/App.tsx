@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import './styles/index.scss'
 import { Route, Routes } from 'react-router-dom'
 import MainPage from './pages/MainPage/MainPage'
 import { Layout } from 'antd'
@@ -7,6 +6,8 @@ import { Content } from 'antd/es/layout/layout'
 import { getCreditsData } from './api/getCreditsData'
 import { useDispatch } from 'react-redux'
 import { addCreditItems } from './redux/slices/CreditSlice'
+
+import './styles/index.scss'
 
 function App() {
     const dispatch = useDispatch()
