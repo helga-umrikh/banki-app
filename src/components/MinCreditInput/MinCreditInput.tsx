@@ -16,9 +16,8 @@ const MinCreditInput = () => {
 
     const debouncedDispatch = useCallback(
         debounce((value: number | null) => {
-            console.log(value)
             dispatch(setFilter(value))
-        }, 2000),
+        }, 500),
         []
     )
 
