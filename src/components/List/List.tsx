@@ -1,10 +1,10 @@
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC } from 'react'
 import './List.scss'
 import { Avatar, List as ListComponent, Typography } from 'antd'
-import { Product } from '../../interfaces/IBankData'
+import { IProduct } from '../../interfaces/IBankData'
 const { Title } = Typography
 interface ListProps {
-    data: Product[]
+    data: IProduct[]
 }
 
 const List: FC<ListProps> = ({ data }) => {

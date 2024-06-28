@@ -1,14 +1,16 @@
-export interface Filter {
+export interface IFilter {
     amount: number | null
     sorting?: 'min' | 'max' | null
 }
 
-export interface Product {
+export interface IProduct {
     amount: number
     name: string | null
     logo: string | null
 }
 export interface IBankData {
-    filter: Filter
-    products: Product[] | null
+    filter: IFilter
+    products: IProduct[] | null
 }
+
+export type Sorting = 'min' | 'max' | null

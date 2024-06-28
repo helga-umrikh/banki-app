@@ -7,7 +7,7 @@ import { RootState } from '../../redux/store'
 import MinCreditInput from '../../components/MinCreditInput/MinCreditInput'
 import { Space, Spin } from 'antd'
 import SelectSorting from '../../components/SelectSorting/SelectSorting'
-import { Product } from '../../interfaces/IBankData'
+import { IProduct } from '../../interfaces/IBankData'
 import { useDispatch } from 'react-redux'
 import { setFilter, setSorting } from '../../redux/slices/CreditSlice'
 
@@ -34,7 +34,7 @@ const MainPage = () => {
     )
 
     const prepareCreditsList = (
-        list: Product[],
+        list: IProduct[],
         filter: number | null,
         sorting: 'min' | 'max' | null | undefined
     ) => {

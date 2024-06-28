@@ -13,7 +13,7 @@ function App() {
 
     useEffect(() => {
         const getData = async () => {
-            const res = await getCreditsData('./mock.json')
+            const res = await getCreditsData('http://localhost:3001/products')
             dispatch(addCreditItems(res))
         }
         getData()
