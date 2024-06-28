@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Tooltip } from 'antd'
+import { Button, Tooltip, notification } from 'antd'
 import { ShareAltOutlined } from '@ant-design/icons'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../redux/store'
@@ -28,6 +28,12 @@ const ShareButton = () => {
                     navigator.clipboard.writeText(
                         origin + pathname + '?' + newSearchString
                     )
+
+                    // Showing successful notification to a user
+                    notification.success({
+                        message: 'Ссылка успешно скопирована',
+                        placement: 'bottomRight',
+                    })
                 }}
                 size="large"
                 icon={<ShareAltOutlined />}
