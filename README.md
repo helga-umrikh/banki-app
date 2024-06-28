@@ -41,4 +41,10 @@ To start the app, run the following command:
 npm start
 ```
 
+And to start the mock-server use the following command:
+
+```cpp
+npm run mock-server
+```
+
 This will start the development server and open the app in your default web browser. You should now be able to navigate to the main page and explore movies available on the site.
