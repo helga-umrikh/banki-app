@@ -43,7 +43,7 @@ const MainPage = () => {
 
     return (
         <div className="main-page">
-            <Space>
+            <Space className="main-page__panel">
                 <MinCreditInput />
                 <SelectSorting />
             </Space>

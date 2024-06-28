@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import './SelectSorting.scss'
 import { Select } from 'antd'
 import { useDispatch } from 'react-redux'
 import { useLocation } from 'react-router-dom'

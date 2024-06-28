@@ -4,4 +4,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+
+  &__panel {
+    margin: 2em 0 1em 0;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
 }
