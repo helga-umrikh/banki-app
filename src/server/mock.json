@@ -31,72 +31,67 @@
         {
             "amount": 5000,
             "name": "Альфа-Банк",
-            "logo": "//example.com/logos/alfa-bank.png"
+            "logo": "https://static2.banki.ru/ugc/a8/9c/55/8e/325.png"
         },
         {
             "amount": 15000,
             "name": "Россельхозбанк",
-            "logo": "//example.com/logos/rosselkhozbank.png"
+            "logo": "https://static2.banki.ru/ugc/de/b7/b0/6d/4725.png"
         },
         {
             "amount": 25000,
             "name": "Газпромбанк",
-            "logo": "//example.com/logos/gazprombank.png"
+            "logo": "https://static3.banki.ru/ugc/6d/43/60/de/2764.png"
         },
         {
             "amount": 30000,
             "name": "Райффайзенбанк",
-            "logo": "//example.com/logos/raiffeisen.png"
+            "logo": "https://gkkulik.ru/upload/iblock/d02/d02aae09e8a1ce8cd3b9a24514ea6fd6.png"
         },
         {
             "amount": 7500,
             "name": "Московский Кредитный Банк",
-            "logo": "//example.com/logos/mkb.png"
+            "logo": "https://static3.banki.ru/ugc/7f/b7/3c/77/7292.png"
         },
         {
             "amount": 12000,
             "name": "Промсвязьбанк",
-            "logo": "//example.com/logos/psb.png"
-        },
-        {
-            "amount": 18000,
-            "name": "Банк Открытие",
-            "logo": "//example.com/logos/openbank.png"
+            "logo": "https://static2.banki.ru/ugc/96/12/2c/95/5306.png"
         },
         {
             "amount": 50000,
             "name": "Банк Санкт-Петербург",
-            "logo": "//example.com/logos/spbbank.png"
+            "logo": "https://static3.banki.ru/ugc/74/3b/ec/0a/68665.png"
         },
         {
             "amount": 800000,
             "name": "Росбанк",
-            "logo": "//example.com/logos/rosbank.png"
+            "logo": "https://static4.banki.ru/ugc/cf/b4/5d/b8/3697.png"
         },
         {
             "amount": 3000,
             "name": "МТС Банк",
-            "logo": "//example.com/logos/mts-bank.png"
+            "logo": "https://static4.banki.ru/ugc/b4/10/85/f8/6055.png"
         },
         {
             "amount": 25000,
             "name": "ЮниКредит Банк",
-            "logo": "//example.com/logos/unicredit.png"
+            "logo": "https://static3.banki.ru/ugc/50/21/ee/80/4045.png"
         },
         {
             "amount": 45000,
             "name": "Совкомбанк",
-            "logo": "//example.com/logos/sovcombank.png"
+            "logo": "https://static2.banki.ru/ugc/c3/db/09/6a/76620.png"
         },
         {
             "amount": 100000,
             "name": "Ак Барс Банк",
-            "logo": "//example.com/logos/akbars.png"
+            "logo": "https://static2.banki.ru/ugc/02/5f/fc/e3/36119.png"
         },
         {
             "amount": 200000,
             "name": "Банк Уралсиб",
-            "logo": "//example.com/logos/uralsib.png"
+            "logo": "https://static3.banki.ru/ugc/07/33/dd/92/63520.png"
         }
     ]
 }
