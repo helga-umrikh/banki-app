@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import './styles/index.scss'
+import { Route, Routes } from 'react-router-dom'
 import MainPage from './pages/MainPage/MainPage'
 import { Layout } from 'antd'
 import { Content } from 'antd/es/layout/layout'
@@ -22,7 +23,9 @@ function App() {
         <div className="App">
             <Layout className="wrapper">
                 <Content>
-                    <MainPage />
+                    <Routes>
+                        <Route path="/search" element={<MainPage />} />
+                    </Routes>
                 </Content>
             </Layout>
         </div>
