@@ -42,7 +42,7 @@ const MinCreditInput = () => {
                 className="min-credit-input__component"
                 value={creditValue}
                 min={1}
-                style={{width: 250}}
+                style={{ width: 170 }}
                 size="large"
                 placeholder={'Сумма кредита'}
                 onChange={handleMinCreditInput}

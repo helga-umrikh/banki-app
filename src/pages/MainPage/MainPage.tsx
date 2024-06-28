@@ -7,6 +7,7 @@ import MinCreditInput from '../../components/MinCreditInput/MinCreditInput'
 import { Space, Spin } from 'antd'
 import SelectSorting from '../../components/SelectSorting/SelectSorting'
 import { IProduct } from '../../interfaces/IBankData'
+import ShareButton from '../../components/ShareButton/ShareButton'
 
 const MainPage = () => {
     const filter = useSelector(
@@ -43,17 +44,25 @@ const MainPage = () => {
 
     return (
         <div className="main-page">
-            <Space className="main-page__panel">
-                <MinCreditInput />
-                <SelectSorting />
-            </Space>
-
             {creditListData ? (
-                <List
-                    data={prepareCreditsList(creditListData, filter, sorting)}
-                />
+                <>
+                    <Space className="main-page__panel">
+                        <div className="panel__buttons">
+                            <MinCreditInput />
+                            <SelectSorting />
+                        </div>
+                        <ShareButton />
+                    </Space>
+                    <List
+                        data={prepareCreditsList(
+                            creditListData,
+                            filter,
+                            sorting
+                        )}
+                    />
+                </>
             ) : (
-                <Spin />
+                <Spin className="main-page__spin" size="large" />
             )}
         </div>
     )

@@ -31,7 +31,7 @@ const SelectSorting = () => {
             <Select
                 placeholder={'Сортировать'}
                 value={selectedValue}
-                style={{ width: 250 }}
+                style={{ width: 170 }}
                 onChange={handleSelect}
                 options={[
                     {
