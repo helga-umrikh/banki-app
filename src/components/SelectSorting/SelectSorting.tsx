@@ -1,29 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import './SelectSorting.scss'
 import { Select } from 'antd'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { useLocation } from 'react-router-dom'
 import { setSorting } from '../../redux/slices/CreditSlice'
-import { RootState } from '../../redux/store'
+import { Sorting } from '../../interfaces/IBankData'
 
 const SelectSorting = () => {
-    const [selectedValue, setSelectedValue] = useState<'min' | 'max' | null>(
-        null
-    )
+    const [selectedValue, setSelectedValue] = useState<Sorting>(null)
     const dispatch = useDispatch()
-    const sorting = useSelector(
-        (state: RootState) => state.creditList.filter.sorting
+
+    let query = new URLSearchParams(useLocation().search)
+    let sort = query.get('sort')
+
+    const handleSelect = useCallback(
+        (value: Sorting) => {
+            setSelectedValue(value)
+            dispatch(setSorting(value))
+        },
+        [dispatch]
     )
+
+    useEffect(() => {
+        if (sort) {
+            handleSelect(sort as Sorting)
+        }
+    }, [sort, handleSelect])
 
     return (
         <div className="select">
             <Select
                 placeholder={'Сортировать'}
-                value={selectedValue || sorting}
+                value={selectedValue}
                 style={{ width: 250 }}
-                onChange={(value: 'min' | 'max' | null) => {
-                    setSelectedValue(value)
-                    dispatch(setSorting(value))
-                }}
+                onChange={handleSelect}
                 options={[
                     {
                         value: 'max',

@@ -2,27 +2,13 @@ import React from 'react'
 import './MainPage.scss'
 import List from '../../components/List/List'
 import { useSelector } from 'react-redux'
-import { useLocation } from 'react-router-dom'
 import { RootState } from '../../redux/store'
 import MinCreditInput from '../../components/MinCreditInput/MinCreditInput'
 import { Space, Spin } from 'antd'
 import SelectSorting from '../../components/SelectSorting/SelectSorting'
 import { IProduct } from '../../interfaces/IBankData'
-import { useDispatch } from 'react-redux'
-import { setFilter, setSorting } from '../../redux/slices/CreditSlice'
-
-type sortValue = 'min' | 'max' | null
 
 const MainPage = () => {
-    let query = new URLSearchParams(useLocation().search)
-    const dispatch = useDispatch()
-
-    let amount = query.get('amount')
-    let sort = query.get('sort') as sortValue
-
-    if (sort) dispatch(setSorting(sort))
-    if (amount) dispatch(setFilter(Number(amount)))
-
     const filter = useSelector(
         (state: RootState) => state.creditList.filter.amount
     )

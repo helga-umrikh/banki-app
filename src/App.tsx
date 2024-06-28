@@ -13,8 +13,8 @@ function App() {
 
     useEffect(() => {
         const getData = async () => {
-            const res = await getCreditsData('http://localhost:3001/products')
-            dispatch(addCreditItems(res))
+            const data = await getCreditsData('http://localhost:3001/products')
+            dispatch(addCreditItems(data))
         }
         getData()
     }, [dispatch])

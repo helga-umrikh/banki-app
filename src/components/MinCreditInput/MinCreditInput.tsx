@@ -1,18 +1,18 @@
-import React, { useState, useCallback } from 'react'
-import './MinCreditInput.scss'
+import React, { useState, useCallback, useEffect } from 'react'
 import { InputNumber } from 'antd'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setFilter } from '../../redux/slices/CreditSlice'
-import { RootState } from '../../redux/store'
+import { useLocation } from 'react-router-dom'
 import debounce from 'lodash/debounce'
+
+import './MinCreditInput.scss'
 
 const MinCreditInput = () => {
     const [creditValue, setCreditValue] = useState<number | null>(null)
     const dispatch = useDispatch()
 
-    const filter = useSelector(
-        (state: RootState) => state.creditList.filter.amount
-    )
+    let query = new URLSearchParams(useLocation().search)
+    let amount = query.get('amount')
 
     const debouncedDispatch = useCallback(
         debounce((value: number | null) => {
@@ -22,16 +22,25 @@ const MinCreditInput = () => {
         []
     )
 
-    const handleMinCreditInput = (value: number | null) => {
-        setCreditValue(value)
-        debouncedDispatch(value)
-    }
+    const handleMinCreditInput = useCallback(
+        (value: number | null) => {
+            setCreditValue(value)
+            debouncedDispatch(value)
+        },
+        [debouncedDispatch]
+    )
+
+    useEffect(() => {
+        if (amount) {
+            handleMinCreditInput(Number(amount))
+        }
+    }, [amount, handleMinCreditInput])
 
     return (
         <div className="min-credit-input">
             <InputNumber
                 className="min-credit-input__component"
-                value={creditValue || filter}
+                value={creditValue}
                 min={1}
                 size="large"
                 placeholder={'Сумма кредита'}
