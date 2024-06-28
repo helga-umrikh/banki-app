@@ -29,7 +29,9 @@ const List: FC<ListProps> = ({ data }) => {
                     </ListComponent.Item>
                 ))
             ) : (
-                <Title level={5}>Нет данных</Title>
+                <Title level={5} className="credits-list__title">
+                    К сожалению, по вашему запросу ничего не найдено
+                </Title>
             )}
         </ListComponent>
     )
