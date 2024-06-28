@@ -24,6 +24,7 @@ const ShareButton = () => {
         <Tooltip title="Скопировать реультаты поиска">
             <Button
                 onClick={() => {
+                    // Adding URL app to clipboard with current search and sort state
                     navigator.clipboard.writeText(
                         origin + pathname + '?' + newSearchString
                     )

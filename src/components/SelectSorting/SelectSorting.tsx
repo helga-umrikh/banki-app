@@ -21,6 +21,7 @@ const SelectSorting = () => {
     )
 
     useEffect(() => {
+        // If there is any sort param set within URL - use that as initial sort value
         if (sort) {
             handleSelect(sort as Sorting)
         }

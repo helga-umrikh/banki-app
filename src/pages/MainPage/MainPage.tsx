@@ -1,13 +1,14 @@
 import React from 'react'
-import './MainPage.scss'
 import List from '../../components/List/List'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../redux/store'
 import MinCreditInput from '../../components/MinCreditInput/MinCreditInput'
 import { Space, Spin } from 'antd'
 import SelectSorting from '../../components/SelectSorting/SelectSorting'
-import { IProduct } from '../../interfaces/IBankData'
+import { IProduct, Sorting } from '../../interfaces/IBankData'
 import ShareButton from '../../components/ShareButton/ShareButton'
+
+import './MainPage.scss'
 
 const MainPage = () => {
     const filter = useSelector(
@@ -20,10 +21,11 @@ const MainPage = () => {
         (state: RootState) => state.creditList.products
     )
 
+    // Sorting and filtering data
     const prepareCreditsList = (
         list: IProduct[],
         filter: number | null,
-        sorting: 'min' | 'max' | null | undefined
+        sorting: Sorting | undefined
     ) => {
         return list
             .filter(

@@ -14,6 +14,7 @@ const MinCreditInput = () => {
     let query = new URLSearchParams(useLocation().search)
     let amount = query.get('amount')
 
+    // We need to use a handler wrapped in useCallback and debounce to prevent from unnecessary state updates
     const debouncedDispatch = useCallback(
         debounce((value: number | null) => {
             dispatch(setFilter(value))
@@ -30,6 +31,7 @@ const MinCreditInput = () => {
     )
 
     useEffect(() => {
+        // If there is any amount param set within URL - use that as initial filter value
         if (amount) {
             handleMinCreditInput(Number(amount))
         }

@@ -12,6 +12,7 @@ function App() {
     const dispatch = useDispatch()
 
     useEffect(() => {
+        // Requesting data from mock-server...
         const getData = async () => {
             const data = await getCreditsData('http://localhost:3001/products')
             dispatch(addCreditItems(data))

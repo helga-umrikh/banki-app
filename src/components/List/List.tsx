@@ -1,11 +1,13 @@
 import React, { FC } from 'react'
-import './List.scss'
 import { Avatar, List as ListComponent, Typography } from 'antd'
 import { IProduct } from '../../interfaces/IBankData'
-const { Title, Text } = Typography
+
+import './List.scss'
 interface ListProps {
     data: IProduct[]
 }
+
+const { Title, Text } = Typography
 
 const List: FC<ListProps> = ({ data }) => {
     return (
